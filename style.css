@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "Overpass";
+  src: url("./assets/fonts/Overpass-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  /* COLORS */
+  --White: hsl(0, 100%, 100%);
+  --Grey-500: hsl(217, 12%, 63%);
+  --Grey-900: hsl(213, 19%, 18%);
+  --Grey-950: hsl(216, 12%, 8%);
+  --Orange500: hsl(25, 97%, 53%);
+  --Blue: hsl(228, 45%, 44%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  border: none;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  font-family: "Overpass", sans-serif;
+  background-color: var(--Grey-950);
+  padding: 153px 24px 0 24px;
+}
+
+main {
+  background-image: radial-gradient(
+    98.96% 98.96% at 50% 0%,
+    #232a34 0%,
+    #181e27 100%
+  ); /* convert this to hsl*/
+  padding: 28.5px 24px;
+  border-radius: 15px;
+}
+
+.rating-main-container {
+  display: block;
+}
+
+.star-container {
+  margin-bottom: 24px;
+}
+
+.star-icon {
+  width: 40px;
+  height: 40px;
+  padding: 13.33px 13.02px;
+  background-color: var(--Grey-900);
+  border-radius: 50%;
+}
+
+.rating-question {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--White);
+  margin-bottom: 16px;
+}
+
+.rating-comment {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.572;
+  color: var(--Grey-500);
+  margin-bottom: 16px;
+}
+
+.rating-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.rating-btns {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--Grey-900);
+  color: var(--Grey-500);
+}
+
+.submit-btn {
+  background-color: var(--Orange500);
+  color: var(--Grey-950);
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 22.5px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 1.87px;
+}
+
+/* Thank you state */
+
+.thank-you-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: 7.5px 0;
+}
+
+.online-payment-icon {
+  width: 144px;
+  margin-bottom: 24px;
+}
+
+.rating-container {
+  background-color: var(--Grey-900);
+  color: var(--Orange500);
+  padding: 6px 12px;
+  border-radius: 22.5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  width: 168px;
+  margin-bottom: 24px;
+}
+
+.thank-you {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--White);
+  margin-bottom: 16px;
+}
+
+.thank-you-message {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: var(--Grey-500);
+}
+
+/* Footer */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--Blue);
+}
+
+/* Tablet size */
+
+@media only screen and (min-width: 677px) {
+  body {
+    padding: 192px 178px 0 178px;
+  }
+
+  main {
+    padding: 34.5px 30.5px;
+    border-radius: 30px;
+  }
+
+  .star-container {
+    margin-bottom: 32px;
+  }
+
+  .star-icon {
+    width: 48px;
+    height: 48px;
+    padding: 16px 15.63px;
+  }
+
+  .rating-question {
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 16px;
+  }
+
+  .rating-comment {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .rating-btn-container {
+    margin-bottom: 32px;
+  }
+
+  .rating-btns {
+    width: 51px;
+    height: 51px;
+  }
+
+  .submit-btn {
+    padding: 12.5px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.17px;
+  }
+
+  /* Thank you state */
+
+  .thank-you-container {
+    margin: 10px 5.5px;
+  }
+
+  .online-payment-icon {
+    width: 162px;
+    margin-bottom: 32px;
+  }
+
+  .rating-container {
+    padding: 6px 19.5px;
+    font-size: 15px;
+    width: 193px;
+    margin-bottom: 32px;
+  }
+
+  .thank-you {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .thank-you-message {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* Desktop size */
+
+@media only screen and (min-width: 1400px) {
+  body {
+    padding: 192px 514px 0 514px;
+  }
+}
+
+/* Hover/Focus effect */
+
+.rating-btns:hover,
+.submit-btn:hover {
+  background-color: var(--White);
+  color: var(--Grey-900);
+}
+
+.rating-btns:focus {
+  background-color: var(--Orange500);
+  color: var(--Grey-900);
+  outline: unset;
+}
+
+.submit-btn:focus {
+  background-color: var(--White);
+  color: var(--Grey-900);
+  outline: unset;
+}
