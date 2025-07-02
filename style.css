@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 @font-face {
   font-family: "Overpass";
   src: url("./assets/fonts/Overpass-VariableFont_wght.ttf") format("truetype");
@@ -11,6 +15,8 @@
   --Grey-950: hsl(216, 12%, 8%);
   --Orange500: hsl(25, 97%, 53%);
   --Blue: hsl(228, 45%, 44%);
+  --Gradient-0: hsl(215, 20%, 17%);
+  --Gradient-100: hsl(216, 24%, 12%);
 }
 
 * {
@@ -28,6 +34,19 @@ button {
   font: inherit;
   border: none;
   line-height: 1;
+  cursor: pointer;
+}
+
+label[class="rating-btns"] {
+  cursor: pointer;
+}
+fieldset {
+  all: unset;
+}
+
+input[type="radio"] {
+  position: absolute;
+  clip-path: inset(50%);
 }
 
 a {
@@ -39,20 +58,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100dvh;
   font-family: "Overpass", sans-serif;
+  font-size: 1.6rem;
   background-color: var(--Grey-950);
-  padding: 153px 24px 0 24px;
+  /* padding-top: clamp(5.3rem, calc(-1.46rem + 18.02vw), 19.2rem);
+  padding-left: clamp(2.4rem, calc(-4.2rem + 17.6vw), 17.8rem);
+  padding-right: clamp(2.4rem, calc(-4.2rem + 17.6vw), 17.8rem);
+  padding-bottom: 2.4rem; */
+  padding: 15.3rem 2.4rem 0; /*Commented out paddings provide smooth transition with changing screen size, however active paddings are needed to meet parameters that are in the figma file. In case using smooth paddings, all other paddings should be commented out*/
 }
 
 main {
   background-image: radial-gradient(
     98.96% 98.96% at 50% 0%,
-    #232a34 0%,
-    #181e27 100%
-  ); /* convert this to hsl*/
-  padding: 28.5px 24px;
-  border-radius: 15px;
+    var(--Gradient-0) 0%,
+    var(--Gradient-100) 100%
+  );
+  padding: 2.85rem 2.4rem;
+  border-radius: 1.5rem;
 }
 
 .rating-main-container {
@@ -60,42 +84,49 @@ main {
 }
 
 .star-container {
-  margin-bottom: 24px;
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--Grey-900);
+  border-radius: 50%;
+  margin-bottom: 2.4rem;
 }
 
 .star-icon {
-  width: 40px;
-  height: 40px;
-  padding: 13.33px 13.02px;
-  background-color: var(--Grey-900);
-  border-radius: 50%;
+  width: 1.6rem;
 }
+
+/* Check star dementions */
 
 .rating-question {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.25;
   color: var(--White);
-  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
 }
 
 .rating-comment {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.572;
   color: var(--Grey-500);
-  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
 }
 
 .rating-btn-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 
 .rating-btns {
-  width: 42px;
-  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
   border-radius: 50%;
   background-color: var(--Grey-900);
   color: var(--Grey-500);
@@ -105,12 +136,12 @@ main {
   background-color: var(--Orange500);
   color: var(--Grey-950);
   width: 100%;
-  padding: 15px 0;
-  border-radius: 22.5px;
+  padding: 1.5rem 0;
+  border-radius: 2.25rem;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 15px;
-  letter-spacing: 1.87px;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.187rem;
 }
 
 /* Thank you state */
@@ -119,40 +150,40 @@ main {
   display: none;
   flex-direction: column;
   align-items: center;
-  margin: 7.5px 0;
+  margin: 0.75rem 0;
 }
 
 .online-payment-icon {
-  width: 144px;
-  margin-bottom: 24px;
+  width: 14.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .rating-container {
   background-color: var(--Grey-900);
   color: var(--Orange500);
-  padding: 6px 12px;
-  border-radius: 22.5px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2.25rem;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.4rem;
+  line-height: 2rem;
   text-align: center;
-  width: 168px;
-  margin-bottom: 24px;
+  width: 16.8rem;
+  margin-bottom: 2.4rem;
 }
 
 .thank-you {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 2.4rem;
+  line-height: 3rem;
   text-align: center;
   color: var(--White);
-  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
 }
 
 .thank-you-message {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
   text-align: center;
   color: var(--Grey-500);
 }
@@ -160,97 +191,96 @@ main {
 /* Footer */
 
 .attribution {
-  font-size: 11px;
+  font-size: 1.1rem;
   text-align: center;
+  color: var(--White);
 }
 .attribution a {
   color: var(--Blue);
 }
 
+.visually-hidden {
+  display: none;
+}
+
 /* Tablet size */
 
-@media only screen and (min-width: 677px) {
+@media only screen and (min-width: 768px) {
   body {
-    padding: 192px 178px 0 178px;
+    padding: 19.2rem 17.8rem 0;
   }
 
   main {
-    padding: 34.5px 30.5px;
-    border-radius: 30px;
+    padding: 3.45rem 3.05rem;
+    border-radius: 3rem;
   }
 
   .star-container {
-    margin-bottom: 32px;
-  }
-
-  .star-icon {
-    width: 48px;
-    height: 48px;
-    padding: 16px 15.63px;
+    margin-bottom: 3.2rem;
   }
 
   .rating-question {
-    font-size: 28px;
-    line-height: 35px;
-    margin-bottom: 16px;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    margin-bottom: 1.6rem;
   }
 
   .rating-comment {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
   }
 
   .rating-btn-container {
-    margin-bottom: 32px;
+    margin-bottom: 3.2rem;
   }
 
   .rating-btns {
-    width: 51px;
-    height: 51px;
+    width: 5.1rem;
+    height: 5.1rem;
   }
 
   .submit-btn {
-    padding: 12.5px 0;
+    padding: 1.25rem 0;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.17px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.017rem;
   }
 
   /* Thank you state */
 
   .thank-you-container {
-    margin: 10px 5.5px;
+    margin: 1rem 0.55rem;
   }
 
   .online-payment-icon {
-    width: 162px;
-    margin-bottom: 32px;
+    width: 16.2rem;
+    margin-bottom: 3.2rem;
   }
 
   .rating-container {
-    padding: 6px 19.5px;
-    font-size: 15px;
-    width: 193px;
-    margin-bottom: 32px;
+    padding: 0.6rem 1.95rem;
+    font-size: 1.5rem;
+    width: 19.3rem;
+    margin-bottom: 3.2rem;
   }
 
   .thank-you {
-    font-size: 28px;
-    line-height: 35px;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
   }
 
   .thank-you-message {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
   }
 }
 
 /* Desktop size */
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1440px) {
   body {
-    padding: 192px 514px 0 514px;
+    padding: 19.2rem 51.4rem 0;
   }
 }
 
@@ -260,6 +290,11 @@ main {
 .submit-btn:hover {
   background-color: var(--White);
   color: var(--Grey-900);
+}
+
+.rating-btns:active,
+.submit-btn:active {
+  transform: scale(0.97);
 }
 
 .rating-btns:focus {
@@ -272,4 +307,14 @@ main {
   background-color: var(--White);
   color: var(--Grey-900);
   outline: unset;
+}
+
+:is(.rating-btns, .submit-btn, input[type="radio"]):focus-visible {
+  outline: 3px solid var(--Orange500);
+  outline-offset: 4px;
+}
+
+input[type="radio"]:checked + .rating-btns {
+  background-color: var(--Orange500);
+  color: var(--White);
 }
