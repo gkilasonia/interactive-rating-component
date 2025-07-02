@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/gkilasonia/frontend-quiz-app) <!-- Change that to real one -->
-- Live Site URL: [Add live site URL here](https://kilasa-frontend-quiz.netlify.app/) <!-- Change that to real one -->
+- Solution URL: [Add solution URL here](https://github.com/gkilasonia/interactive-rating-component/tree/main)
+- Live Site URL: [Add live site URL here](https://kilasa-interactive-rating-app.netlify.app/)
 
 ## My process
 
